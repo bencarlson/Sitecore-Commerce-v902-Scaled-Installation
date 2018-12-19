@@ -46,7 +46,7 @@ Rename the machine xp902-id as well
 Copy Deploy folder to c:\Deploy_XC
 Copy install packages to C:\Sitecore.Commerce.2018.07-2.2.126
 
-Run createrootcert.ps1 to create the root sitecore cert (if selfssl)
+Run createrootcert.ps1 to create the root sitecore cert (if selfssl) - **DO NOT DO THIS IF YOU HAVE ALREADY CREATED A ROOT CERT DURING THE XP1 SCALED INSTALL**
 
 ```powershell
 .\create-root-cert
