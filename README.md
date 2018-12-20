@@ -38,6 +38,8 @@ Once everything is installed using the standard scripts and with the habitat cat
 
 ## High level script descriptions (in order of installation)
 
+Do a search and replace in all deploy_xc files for "xp902" and replace it with your site name/prefix, i.e. test-rb or prod-rb
+
 ### Deploy Sitecore Commerce Identity Server
 
 Copy Base VM and create a new VM named "xp902-id"
