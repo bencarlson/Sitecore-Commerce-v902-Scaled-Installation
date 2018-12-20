@@ -35,10 +35,12 @@ function Invoke-DeployCommerceDatabaseTask {
 	}	
 	else{
 		Write-Host "Using SQL Auth...";
-		$connectionString = "Server=" + $CommerceServicesDbServer + ";Trusted_Connection=Yes;"
+		#$connectionString = "Server=" + $CommerceServicesDbServer + ";Trusted_Connection=Yes;"
+		$connectionString = "Server=" + $CommerceServicesDbServer + ";Initial Catalog=xxxxxx_Core;User ID=xxxxtest;Password=1234passwd"
 	}
 		
-	$userName = "$($UserAccount.domain)\$($UserAccount.username)"
+	#$userName = "$($UserAccount.domain)\$($UserAccount.username)"
+	$userName = "sitecoreqa"
 	
 	#deploy using the dacpac
 	try {
@@ -317,9 +319,16 @@ function AddSqlUserToRole
 
     try
     {
-		Invoke-Sqlcmd -ServerInstance $dbServer -Query "IF NOT EXISTS (SELECT * FROM master.dbo.syslogins WHERE name = '$($userName)') BEGIN CREATE LOGIN [$($userName)] FROM WINDOWS WITH DEFAULT_DATABASE=[$($dbName)], DEFAULT_LANGUAGE=[us_english] END"
-        Invoke-Sqlcmd -ServerInstance $dbServer -Query "IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = '$($userName)') BEGIN USE [$($dbName)] CREATE USER [$($userName)] FOR LOGIN [$($userName)] END"
-        Invoke-Sqlcmd -ServerInstance $dbServer -Query "USE [$($dbName)] EXEC sp_addrolemember '$($role)', '$($userName)'"
+	
+	#-Database <String>]
+     # [-Username <String>]
+     # [-Password <String>]
+	  
+	  
+	  
+		Invoke-Sqlcmd -ServerInstance $dbServer -Username "sitecoreqa" -password "EeH3O0N4kd" -Query "IF NOT EXISTS (SELECT * FROM master.dbo.syslogins WHERE name = '$($userName)') BEGIN CREATE LOGIN [$($userName)] FROM WINDOWS WITH DEFAULT_DATABASE=[$($dbName)], DEFAULT_LANGUAGE=[us_english] END"
+        Invoke-Sqlcmd -ServerInstance $dbServer -Username "sitecoreqa" -password "EeH3O0N4kd" -Query "IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = '$($userName)') BEGIN USE [$($dbName)] CREATE USER [$($userName)] FOR LOGIN [$($userName)] END"
+        Invoke-Sqlcmd -ServerInstance $dbServer -Username "sitecoreqa" -password "EeH3O0N4kd" -Query "USE [$($dbName)] EXEC sp_addrolemember '$($role)', '$($userName)'"
         Write-Host "     Added" -ForegroundColor DarkGreen
     }
     catch
