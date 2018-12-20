@@ -176,7 +176,9 @@ Export the Self SSL Cert created and add it to deploy_xc/sslcerts (you will use 
 
 Deploy-Sitecore-Commerce-Engine - Run this script on each machine hosting a commerce engine. Delete unwanted sites.
 
-Deploy-Sitecore-Commerce-CommerceSolrCores, run this on the SOLR server or from a machine with the correct access to the solr cores folder.
+Be sure to download the Sitecore app files and install in: C:\Sitecore.Commerce.2018.07-2.2.126
+
+Deploy-Sitecore-Commerce-CommerceSolrCores, run this on the SOLR server or from a machine with the correct access to the solr cores folder. <- may require updating paths to resource files. 
 
 ### Deploy Commerce BizFx
 
