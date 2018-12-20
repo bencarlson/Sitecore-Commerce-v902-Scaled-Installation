@@ -63,6 +63,8 @@ Deploy-Sitecore-Commerce-IdentityServer, Run this script to install identity ser
 .\Deploy-Sitecore-Commerce-IdentityServer
 ```
 
+To get logs to output in the inetpub\<instance>\logs folder, change the IIS 'site' to run as "NETWORK SERVICE", create a logs directory (giving NETWORK SERVICE permission to modify), and in the web.config file, set stdoutLogEnabled="true"
+
 Ensure that the xp902-id site is running IIS and that port and SSL mappings are correct.
 Open up port 5050 in the Firewall
 
