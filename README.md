@@ -118,9 +118,9 @@ If you are using Self SSL then you will need to export the created SSL cert and 
 
 Log into previously created Sitecore CM instance and manually create a new role "Commerce DevOps User" and assign Admin to this role.
 
-Go into wwwroot\bootstrap folder and add "Commerce DevOps User" to users allowed to call "commerceops" api calls. (restart IIS)
-
-In wwwroot/data/environments/Plugin.Content.PolicySet-1.0.0.json, open it up and replace the "Host" from sxa.storefront.com to "xp902-cm" (or name you used for CM Service)
+The next two items do in all commerce instances (Ops, Shops, Authoring and Minions):
+1. Go into wwwroot\bootstrap folder and add "Commerce DevOps User" to users allowed to call "commerceops" api calls. (restart IIS)
+2. In wwwroot/data/environments/Plugin.Content.PolicySet-1.0.0.json, open it up and replace the "Host" from sxa.storefront.com to "xp902-cm" (or name you used for CM Service)
 
 Run Bootstrap process to load configuration files.
 If you have customized the configuration files then update them before running this process.
