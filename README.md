@@ -129,7 +129,8 @@ If you have customized the configuration files then update them before running t
 .\Bootstrap-Commerce-Engine
 ```
 
-If 403 error, in config.json for commerce instances (ops, shops, minions and authoring), set: "AntiForgeryEnabled": false,
+If 403 error, in config.json for commerce instances (ops, shops, minions and authoring), set: "AntiForgeryEnabled": false
+Also, make sure to update the username/password & servername in Global.config, as well as setting "TrustedConnection": false
 
 ### Deploy Commerce Engine Authoring
 
