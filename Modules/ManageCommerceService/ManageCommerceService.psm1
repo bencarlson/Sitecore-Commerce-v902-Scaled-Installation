@@ -99,12 +99,16 @@ Function Invoke-ManageCommerceServiceTask {
                         CertStoreLocation = "Cert:\LocalMachine\My"
                         DnsName           = $DnsName
                         Type              = 'SSLServerAuthentication'
-                        Signer            = $Signer
+                        #Signer            = $Signer
                         FriendlyName      = "Sitecore Commerce Services SSL Certificate"
                         KeyExportPolicy   = 'Exportable'
                         KeyProtection     = 'None'
+						NotAfter 		  = (Get-Date).AddYears(42)
                         Provider          = 'Microsoft Enhanced RSA and AES Cryptographic Provider'
                     }
+					
+					Write-Host "DnsName: $DnsName"
+					Write-Host "Signer: $Signer"
                     
                     # Get or create self-signed certificate for localhost                                        
                     $certificates = Get-ChildItem -Path $params.CertStoreLocation -DnsName $DnsName| Where-Object { $_.FriendlyName -eq $params.FriendlyName }
@@ -203,7 +207,7 @@ Function Invoke-IssuingCertificateTask {
             -KeyAlgorithm RSA `
             -KeyLength 2048 `
             -NotBefore (Get-Date) `
-            -NotAfter (Get-Date).AddYears(1) `
+            -NotAfter (Get-Date).AddYears(42) `
             -CertStoreLocation $CertificateStore `
             -FriendlyName $CertificateFriendlyName `
             -HashAlgorithm SHA256 `
