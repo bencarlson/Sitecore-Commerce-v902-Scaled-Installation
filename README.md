@@ -107,6 +107,11 @@ Deploy-Sitecore-Commerce-Engine - Run this script on each machine hosting a comm
 
 Note that you will see a warning about it being unable to create a user and assign roles in the database.
 
+
+**DB ERRORS** 
+If you get DB errors around DacPac and users/permissions, look at the Module file: DeployCommerceDatabase.psm1 - review the UserAccount, connection strings, usernames, etc. These are hardcoded, and use WindowsAuth, not SQL Auth. 
+
+
 Open up port 5015 in the firewall
 
 If you are using Self SSL then you will need to export the created SSL cert and install it into the trusted root of the machine that BizFx
