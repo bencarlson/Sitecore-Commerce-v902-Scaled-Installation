@@ -49,6 +49,7 @@ Copy Deploy folder to c:\Deploy_XC
 Copy install packages to C:\Sitecore.Commerce.2018.07-2.2.126
 
 Run createrootcert.ps1 to create the root sitecore cert (if selfssl) - **DO NOT DO THIS IF YOU HAVE ALREADY CREATED A ROOT CERT DURING THE XP1 SCALED INSTALL**
+**NOTE**: details on manually generating SSL certs is at the end of this document. 
 
 ```powershell
 .\create-root-cert
@@ -305,3 +306,13 @@ xp902.collection\App_data\Models
 xp902.collectionsearch\App_data\jobs\continuous\IndexWorker\App_data\Models
 
 From here you can go through the normal process to either install your custom tenant and site or install the default tenant and site using the existing instructions.
+
+
+
+
+## SSL Cert generation
+
+Run variants of this script to generate self-signed SSL certs: 
+
+PS C:\deploy_xc>  New-SelfSignedCertificate -DnsName "server-awesome" -CertStoreLocation "cert:\LocalMachine\My" -KeyAlgorithm RSA -KeyLength 2048 -NotAfter (Get-Date).AddYears(42) -KeyExportPolicy Exportable -Provider "Microsoft Enhanc
+ed RSA and AES Cryptographic Provider"
