@@ -228,11 +228,12 @@ These will be used during the CM package install process
 
 Copy install packages to C:\Sitecore.Commerce.2018.07-2.2.126
 
-Deploy-Sitecore-Commerce-SitecorePackagesCM, Run this on the CM to install the sitecore packages etc. This takes a VERY long time - and sometimes times out (after 20+ minutes):
+Deploy-Sitecore-Commerce-SitecorePackagesCM, Run this on the CM to install the sitecore packages etc. This takes a VERY long time (10+ minutes):
 
 ```powershell
 .\Deploy-Sitecore-Commerce-SitecorePackagesCM
 ```
+If it times out, you can change the timeout in this line: Invoke-RestMethod $urlInstallModules -TimeoutSec 1800 in the module file 'SitecoreUtilityTasks.psm1'
 
 Go into your Sitecore CM folder: App_Config/Y.Commerce.Engine and open Sitecore.Commerce.Engine.Connect.config
 Update the following settings:
