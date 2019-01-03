@@ -228,7 +228,7 @@ These will be used during the CM package install process
 
 Copy install packages to C:\Sitecore.Commerce.2018.07-2.2.126
 
-Deploy-Sitecore-Commerce-SitecorePackagesCM, Run this on the CM to install the sitecore packages etc
+Deploy-Sitecore-Commerce-SitecorePackagesCM, Run this on the CM to install the sitecore packages etc. This takes a VERY long time - and sometimes times out (after 20+ minutes):
 
 ```powershell
 .\Deploy-Sitecore-Commerce-SitecorePackagesCM
