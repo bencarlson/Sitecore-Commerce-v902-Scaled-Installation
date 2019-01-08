@@ -237,9 +237,9 @@ Deploy-Sitecore-Commerce-SitecorePackagesCM, Run this on the CM to install the s
 ```
 If it times out, you can change the timeout in this line: Invoke-RestMethod $urlInstallModules -TimeoutSec 1800 in the module file 'SitecoreUtilityTasks.psm1'
 
-Go into your Sitecore CM folder: App_Config/Y.Commerce.Engine and open Sitecore.Commerce.Engine.Connect.config
+Go into your Sitecore CM folder: App_Config/Include/Y.Commerce.Engine and open Sitecore.Commerce.Engine.Connect.config
 Update the following settings:
-Update the Include/Y.Commerce.Engine/Sitecore.Commerce.Engine.Connect.config to add the thumbprint from the previous installed engine connect cert.
+Update the App_Config/Include/Y.Commerce.Engine/Sitecore.Commerce.Engine.Connect.config to add the thumbprint from the previous installed engine connect cert.
 
       <shopsServiceUrl>https://localhost:5000/api/</shopsServiceUrl>
       <commerceOpsServiceUrl>https://localhost:5000/commerceops/</commerceOpsServiceUrl>
