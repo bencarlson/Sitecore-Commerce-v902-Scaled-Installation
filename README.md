@@ -252,7 +252,7 @@ Restart IIS and log into the Sitecore administrator.
 Once logged in, review log for connectivity errors.
 During startup, Sitecore communicates with the Commerce Engine to validate catalogs.  If there are connectivity errors, they should show up in the logs.
 
-Once CM packages are deployed, you should switch back over to the server running the Commerce Engine Ops service and Initialize the Commerce Engine.
+Once CM packages are deployed, you should switch back over to the server running the Commerce Engine Ops service and Initialize the Commerce Engine. Edit the CommerceEngine.initialize.json file, and make sure the proper environments are listed... i.e RegalAuthoring or HabitatAuthoring
 
 ```powershell
 .\Initialize-Commerce-Engine
