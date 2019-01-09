@@ -260,6 +260,8 @@ Once CM packages are deployed, you should switch back over to the server running
 
 This initialization connects to the Sitecore service to pull additional data.  If this succeeds then you are able to successfully connect to Sitecore.
 
+If initialization fails, you may need to use Postman to boostrap the environments. There is a Bootstrap Postman script provided with the commerce install files. 
+
 Switch back over to Sitecore CM machine to continue the deployment process
 
 Enable CEConnect Data Provider and Generate Catalog Templates
