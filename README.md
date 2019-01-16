@@ -321,5 +321,4 @@ From here you can go through the normal process to either install your custom te
 
 Run variants of this script to generate self-signed SSL certs: 
 
-PS C:\deploy_xc>  New-SelfSignedCertificate -DnsName "server-awesome" -CertStoreLocation "cert:\LocalMachine\My" -KeyAlgorithm RSA -KeyLength 2048 -NotAfter (Get-Date).AddYears(42) -KeyExportPolicy Exportable -Provider "Microsoft Enhanc
-ed RSA and AES Cryptographic Provider"
+PS C:\deploy_xc>  New-SelfSignedCertificate -DnsName "server-awesome" -CertStoreLocation "cert:\LocalMachine\My" -KeyAlgorithm RSA -KeyLength 2048 -NotAfter (Get-Date).AddYears(42) -KeyExportPolicy Exportable -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider"
