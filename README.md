@@ -104,6 +104,8 @@ Deploy-Sitecore-Commerce-Engine - Run this script on each machine hosting a comm
 
 In the Module file: c:\deploy_xc\Modules\DeployCommerceDatabase\DeployCommerceDatabase.psm1 - update the UserAccount, connection strings, usernames, etc. These are hardcoded, and use WindowsAuth, not SQL Auth. 
 
+Also, in script, set: [string]$SiteHostHeaderName = "<prefix>-cm",
+
 ```powershell
 .\Deploy-Sitecore-Commerce-Engine
 ```
