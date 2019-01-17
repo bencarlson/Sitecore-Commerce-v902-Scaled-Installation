@@ -102,6 +102,8 @@ If you want to use a self generated script for this, update the script below to 
 Once the certificate is created, export it and keep it available for later install into CM/CD
 Deploy-Sitecore-Commerce-Engine - Run this script on each machine hosting a commerce engine. Delete unwanted sites.
 
+In the Module file: c:\deploy_xc\Modules\DeployCommerceDatabase\DeployCommerceDatabase.psm1 - update the UserAccount, connection strings, usernames, etc. These are hardcoded, and use WindowsAuth, not SQL Auth. 
+
 ```powershell
 .\Deploy-Sitecore-Commerce-Engine
 ```
