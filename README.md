@@ -221,7 +221,7 @@ It is recommended, if you are using a virtualized environment, to take a snapsho
 
 Copy Deploy folder to c:\Deploy_XC
 
-Review CM instance config files for "test-rb-xconnect" or similar, replace with appropriate xconnect instance name (i.e. collection, collectionsearch, reporting, processing, etc.)
+Review CM instance config files for "test-rb-xconnect", "$prefix-xconnect" or similar, replace with appropriate xconnect instance name (i.e. collection, collectionsearch, reporting, processing, etc.)
 
 In the Deploy_xc folder, create a new folder called "assets"
 download the following and put into the assets folder:
