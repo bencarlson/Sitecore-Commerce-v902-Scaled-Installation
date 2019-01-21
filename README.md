@@ -252,6 +252,9 @@ to
       <shopsServiceUrl>https://xp902-ce-auth:5000/api/</shopsServiceUrl>
       <commerceOpsServiceUrl>https://xp902-ce-auth:5000/commerceops/</commerceOpsServiceUrl>
 
+Also check the Authoring, Ops and Minons for instances of 'localhost' in the Plugins.Regalxxxxxx.json files, and change them to the correct server naming (test-xx-ce-auth for instance). 
+
+
 Restart IIS and log into the Sitecore administrator.
 Once logged in, review log for connectivity errors.
 During startup, Sitecore communicates with the Commerce Engine to validate catalogs.  If there are connectivity errors, they should show up in the logs.
