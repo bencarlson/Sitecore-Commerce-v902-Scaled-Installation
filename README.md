@@ -305,7 +305,7 @@ in <servername>-cd server, App_config/Sitecore.config, change role:require="Cont
   
 Copy the "Master" connection string from a CM instance into the App_Config/ConnectionStrings.config.  This is only temporary for the package deployment.
 
-In App_Config/Sitecore.config, copy the "master" database section from CM to CD machine.
+Also, in App_Config/Sitecore.config, copy the "master" database section from CM to CD machine.
 
 
 ```powershell
