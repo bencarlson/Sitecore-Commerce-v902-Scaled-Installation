@@ -305,7 +305,24 @@ in <servername>-cd server, App_config/Sitecore.config, change role:require="Cont
   
 Copy the "Master" connection string from a CM instance into the App_Config/ConnectionStrings.config.  This is only temporary for the package deployment.
 
-Also, in App_Config/Sitecore.config, copy the "master" database section from CM to CD machine.
+Also, in App_Config/Sitecore.config, copy the "master" database section from CM to CD machine. Change:
+
+```
+  <!-- SUPPORTED SERVER ROLES     
+         Specify the roles that you want this server to perform. A server can perform one or more roles. Enter the roles in a comma separated list. The supported roles are:
+
+         ContentDelivery
+         ContentManagement
+         Processing
+         Reporting
+         Standalone
+          
+    Default value: Standalone
+    -->
+    <add key="role:define" value="ContentManagement"/>
+```
+
+ContentDelivery to ContentManagement in C:\inetpub\wwwroot\<servername>-cd\Web.config
 
 
 ```powershell
