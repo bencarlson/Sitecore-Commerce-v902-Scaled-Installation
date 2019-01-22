@@ -293,6 +293,16 @@ Switch to CM role by changing
 To
 <add key="role:define" value="ContentManagement"/>
 
+in <servername>-cd server, App_config/Sitecore.config, change role:require="ContentDelivery" to role:require="ContentManagement" temporarily:
+
+```
+      <sc.variable name="defaultContentDatabaseName" value="master" />
+  <sc.variable name="defaultContentDatabaseName" role:require="ContentManagement">
+    <patch:attribute name="value">web</patch:attribute>
+  </sc.variable>
+```
+
+  
 Copy the "Master" connection string from a CM instance into the App_Config/ConnectionStrings.config.  This is only temporary for the package deployment.
 
 In App_Config/Sitecore.config, copy the "master" database section from CM to CD machine.
