@@ -257,7 +257,7 @@ Also check the Authoring, Ops and Minons for instances of 'localhost' in the Plu
 
 Restart IIS and log into the Sitecore administrator.
 Once logged in, review log for connectivity errors.
-During startup, Sitecore communicates with the Commerce Engine to validate catalogs.  If there are connectivity errors, they should show up in the logs.
+During startup, Sitecore communicates with the Commerce Engine to validate catalogs.  If there are connectivity errors, they should show up in the logs. If you get TLS/SSL errors, check that the thumbprint here: C:\inetpub\wwwroot\test-rb.collectionsearch\App_Config\AppSettings.config is the <servername>.xconnect_client and that the thumbprints match in: C:\inetpub\wwwroot\test-rb-cm\App_Config\ConnectionStrings.config
 
 Once CM packages are deployed, you should switch back over to the server running the Commerce Engine Ops service and Initialize the Commerce Engine. Edit the CommerceEngine.initialize.json file, and make sure the proper environments are listed... i.e RegalAuthoring or HabitatAuthoring
 
