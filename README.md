@@ -38,7 +38,7 @@ Once everything is installed using the standard scripts and with the habitat cat
 
 ## High level script descriptions (in order of installation)
 
-Do a search and replace in all deploy_xc files for "xp902" and replace it with your site name/prefix, i.e. test-rb or prod-rb
+Do a search and replace in all deploy_xc files for "xp902" and replace it with your site name/prefix, i.e. test-<client> or prod-<client>
 
 ### Deploy Sitecore Commerce Identity Server
 
@@ -221,7 +221,7 @@ It is recommended, if you are using a virtualized environment, to take a snapsho
 
 Copy Deploy folder to c:\Deploy_XC
 
-Review CM instance config files for "test-rb-xconnect", "$prefix-xconnect" or similar, replace with appropriate xconnect instance name (i.e. collection, collectionsearch, reporting, processing, etc.)
+Review CM instance config files for "test-<client>-xconnect", "$prefix-xconnect" or similar, replace with appropriate xconnect instance name (i.e. collection, collectionsearch, reporting, processing, etc.)
 
 In the Deploy_xc folder, create a new folder called "assets"
 download the following and put into the assets folder:
@@ -252,14 +252,14 @@ to
       <shopsServiceUrl>https://xp902-ce-auth:5000/api/</shopsServiceUrl>
       <commerceOpsServiceUrl>https://xp902-ce-auth:5000/commerceops/</commerceOpsServiceUrl>
 
-Also check the Authoring, Ops and Minons for instances of 'localhost' in the Plugins.Regalxxxxxx.json files, and change them to the correct server naming (test-xx-ce-auth for instance). 
+Also check the Authoring, Ops and Minons for instances of 'localhost' in the Plugins.<site>xxxxxx.json files, and change them to the correct server naming (test-xx-ce-auth for instance). 
 
 
 Restart IIS and log into the Sitecore administrator.
 Once logged in, review log for connectivity errors.
-During startup, Sitecore communicates with the Commerce Engine to validate catalogs.  If there are connectivity errors, they should show up in the logs. If you get TLS/SSL errors, check that the thumbprint here: C:\inetpub\wwwroot\test-rb.collectionsearch\App_Config\AppSettings.config is the <servername>.xconnect_client and that the thumbprints match in: C:\inetpub\wwwroot\test-rb-cm\App_Config\ConnectionStrings.config
+During startup, Sitecore communicates with the Commerce Engine to validate catalogs.  If there are connectivity errors, they should show up in the logs. If you get TLS/SSL errors, check that the thumbprint here: C:\inetpub\wwwroot\test-<client>.collectionsearch\App_Config\AppSettings.config is the <servername>.xconnect_client and that the thumbprints match in: C:\inetpub\wwwroot\test-<client>-cm\App_Config\ConnectionStrings.config
 
-Once CM packages are deployed, you should switch back over to the server running the Commerce Engine Ops service and Initialize the Commerce Engine. Edit the CommerceEngine.initialize.json file, and make sure the proper environments are listed... i.e RegalAuthoring or HabitatAuthoring
+Once CM packages are deployed, you should switch back over to the server running the Commerce Engine Ops service and Initialize the Commerce Engine. Edit the CommerceEngine.initialize.json file, and make sure the proper environments are listed... i.e <Site>Authoring or HabitatAuthoring
 
 ```powershell
 .\Initialize-Commerce-Engine
