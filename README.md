@@ -117,6 +117,10 @@ Note that you will see a warning about it being unable to create a user and assi
 If you get DB errors around DacPac and users/permissions, look at the Module file: DeployCommerceDatabase.psm1 - review the UserAccount, connection strings, usernames, etc. These are hardcoded, and use WindowsAuth, not SQL Auth. 
 
 
+
+In config.json for commerce instances (ops, shops, minions and authoring), set: "AntiForgeryEnabled": false
+Also, make sure to update the username/password & servername in Global.config, as well as setting "TrustedConnection": false
+
 Open up port 5015 in the firewall
 
 If you are using Self SSL then you will need to export the created SSL cert and install it into the trusted root of the machine that BizFx
@@ -133,9 +137,6 @@ If you have customized the configuration files then update them before running t
 ```powershell
 .\Bootstrap-Commerce-Engine
 ```
-
-If 403 error, in config.json for commerce instances (ops, shops, minions and authoring), set: "AntiForgeryEnabled": false
-Also, make sure to update the username/password & servername in Global.config, as well as setting "TrustedConnection": false
 
 ### Deploy Commerce Engine Authoring
 
