@@ -306,7 +306,10 @@ in <servername>-cd server, App_config/Sitecore.config, change role:require="Cont
   
 Copy the "Master" connection string from a CM instance into the App_Config/ConnectionStrings.config.  This is only temporary for the package deployment.
 
-Also, in App_Config/Sitecore.config, copy the "master" database section from CM to CD machine. Change:
+Also, in App_Config/Sitecore.config, copy the "master" database section from CM to CD machine. 
+
+
+In C:\inetpub\wwwroot\<servername>-cd\Web.config change ContentDelivery to ContentManagement:
 
 ```
   <!-- SUPPORTED SERVER ROLES     
@@ -323,7 +326,7 @@ Also, in App_Config/Sitecore.config, copy the "master" database section from CM 
     <add key="role:define" value="ContentManagement"/>
 ```
 
-ContentDelivery to ContentManagement in C:\inetpub\wwwroot\<servername>-cd\Web.config
+
 
 
 ```powershell
