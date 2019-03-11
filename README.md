@@ -342,6 +342,27 @@ Update index node id "sitecore_marketingdefinitions_web" to "sc9u2-marketingdefi
 You should be able to pull up the default Sitecore content page:
 <http://xp902-cd/>
 
+
+### Fix indexes in CM
+At this point, the indexes likely will not be displayed in CM. To fix this, you'll need to do the following:
+
+<cm-docroot>\AppConfig\Sitecore\ContentSearch\Sitecore.ContentSearch.config 
+<setting name="ContentSearch.Enabled" value="false" /> <- SET TO TRUE
+
+Change file extension:
+
+<cm-docroot>\AppConfig\Sitecore\Marketing.Operations.xMgmt\Sitecore.Marketing.Search.config.disabled to 
+<cm-docroot>\AppConfig\Sitecore\Marketing.Operations.xMgmt\Sitecore.Marketing.Search.config
+
+What's interesting is if you just changed the first one, did an iisreset, and tested, the ui blows up on:
+No service for type 'Sitecore.Marketing.Search.TypeConverters.IStepStringConverter' has been registered.
+
+This is a case where both have to be changed in order to work.  
+
+
+
+
+
 ### Copy Commerce XConnect Models
 
 Copy models json file from CM machine: xp902-cm\XConnectModels
