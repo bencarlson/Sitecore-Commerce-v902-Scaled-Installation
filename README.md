@@ -274,7 +274,7 @@ Switch back over to Sitecore CM machine to continue the deployment process
 
 Enable CEConnect Data Provider and Generate Catalog Templates
 
-Import the xp902-ce-auth self ssl cert from the sslcerts that you created when installing xp902-ce-auth into local machine/root.  This allows it to trust the self ssl cert when communicating from CM to the Commerce Engine.
+Import the xp902-ce-auth self ssl cert from the sslcerts that you created when installing xp902-ce-auth into local machine/root.  This allows it to trust the self ssl cert when communicating from CM to the Commerce Engine. The thumbprint in Sitecore.Commerce.Engine.Connect.config in the CM instance, should be for the CommerceOps instance SSL cert. 
 
 ```powershell
 .\Deploy-Sitecore-Commerce-EnableSitecoreCM
