@@ -72,6 +72,11 @@ Open up port 5050 in the Firewall
 Export Self SSL Cert created during install (xp902-id).
 This will be installed into bizfx server to allow it to trust the self ssl (only necessary for self ssl!)
 
+
+### Check all DB connection settings
+
+Search for "TrustedConnection" in the deploy_xc folder and set it to false (this will disable Windows Authentication to the DB. Make sure that the DB URL and credentials are set properly as well. Search for "User Id" as well, as this is another place where Windows Auth sometimes pops up - change it to use SQL Auth. 
+
 ### Deploy Commerce Engine DevOps Instance
 
 Copy and deploy base VM template
