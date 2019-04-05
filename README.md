@@ -39,6 +39,15 @@ Once everything is installed using the standard scripts and with the habitat cat
 ## High level script descriptions (in order of installation)
 
 Do a search and replace in all deploy_xc files for "xp902" and replace it with your site name/prefix, i.e. test-<client> or prod-<client>
+      
+### SSL certificates
+
+Due to the number of SSL certs that are used, and the number of places the thumbprint is used, the best plan for certificates is to use a wildcard cert (i.e. *.hostname.com) and/or SAN (Subject Alternate Name) cert so you can share the same cert (and thumbprint) on all server instances. 
+
+SAN Cert with Wildcard: 
+```
+New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName "*.domain.com, domain.com, secure.login.domain.com"
+```
 
 ### Deploy Sitecore Commerce Identity Server
 
