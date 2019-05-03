@@ -49,6 +49,13 @@ SAN Cert with Wildcard:
 New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName "*.domain.com, domain.com, secure.login.domain.com"
 ```
 
+#### Error: System.Net.WebException: The request was aborted: Could not create SSL/TLS secure channel.
+As long as the server certificate is valid, this message is most likely that the Sitecore XP server’s IIS app pool user account does not have read access to the client certificate’s private key. This access is needed so that the Sitecore XP server can encrypt communications using its client certificate.
+
+To remedy this issue, open the local machine certificates (“Manage computer certificates” in a start menu search) on the Sitecore XP server. Find the client certificate (normally under Personal\Certificates). Right click it, choose All Tasks, then Manage Private Keys.... allow full control to the app pool user. 
+
+
+
 ### Deploy Sitecore Commerce Identity Server
 
 Copy Base VM and create a new VM named "xp902-id"
