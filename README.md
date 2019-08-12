@@ -93,10 +93,10 @@ This will be installed into bizfx server to allow it to trust the self ssl (only
 
 Search for "TrustedConnection" in the deploy_xc folder and set it to false (this will disable Windows Authentication to the DB. Make sure that the DB URL and credentials are set properly as well. Search for "User Id" as well, as this is another place where Windows Auth sometimes pops up - change it to use SQL Auth. 
 
-### Deploy Commerce Engine DevOps Instance
+### Deploy Commerce Engine Ops Instance
 
 Copy and deploy base VM template
-rename machine to: xp902-ce-oops
+rename machine to: xp902-ce-ops
 (requires restart)
 
 Install .NET Core Windows Server Hosting 2.0.8(or latest):
