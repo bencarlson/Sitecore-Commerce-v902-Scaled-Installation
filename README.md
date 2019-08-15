@@ -368,7 +368,10 @@ You should be able to pull up the default Sitecore content page:
 At this point, the indexes likely will not be displayed in CM. To fix this, you'll need to do the following:
 
 <cm-docroot>\AppConfig\Sitecore\ContentSearch\Sitecore.ContentSearch.config 
-<setting name="ContentSearch.Enabled" value="false" /> <- SET TO TRUE
+
+```
+```<setting name="ContentSearch.Enabled" value="false" /> <- SET TO TRUE
+```
 
 Change file extension:
 
