@@ -370,7 +370,7 @@ At this point, the indexes likely will not be displayed in CM. To fix this, you'
 <cm-docroot>\AppConfig\Sitecore\ContentSearch\Sitecore.ContentSearch.config 
 
 ```
-```<setting name="ContentSearch.Enabled" value="false" /> <- SET TO TRUE
+<setting name="ContentSearch.Enabled" value="false" /> <- SET TO TRUE
 ```
 
 Change file extension:
